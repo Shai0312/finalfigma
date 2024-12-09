@@ -4,6 +4,7 @@ import Hero from "./Hero"
 const Pages = () => {
   return (
     <div>
+      
       <Hero />
     </div>
   )

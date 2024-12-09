@@ -1,6 +1,5 @@
-
 'use client';
-// resopnsive
+// responsive
 import { useState } from 'react'
 import Link from "next/link"
 import Image from "next/image"
@@ -11,7 +10,7 @@ export default function Navbar() {
 
   const menuItems = [
     { name: "Home", href: "/", active: true },
-    { name: "Menu", href: "/Manu"},
+    { name: "Menu", href: "/Manu" },
     { name: "Blog", href: "/blog" },
     { name: "Pages", href: "/pages" },
     { name: "About", href: "/about" },
@@ -39,19 +38,12 @@ export default function Navbar() {
         </button>
 
         {/* Navigation Links */}
-        <ul className={`
-          fixed inset-0 bg-[#0D0D0D] flex flex-col items-center justify-center gap-6
-          lg:static lg:flex-row lg:bg-transparent lg:gap-[32px]
-          transition-all duration-300 ease-in-out
-          ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible lg:opacity-100 lg:visible'}
-        `}>
+        <ul className={`fixed inset-0 bg-[#0D0D0D] flex flex-col items-center justify-center gap-6 lg:static lg:flex-row lg:bg-transparent lg:gap-[32px] transition-all duration-300 ease-in-out ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible lg:opacity-100 lg:visible'}`}>
           {menuItems.map((item) => (
             <li key={item.name}>
               <Link
                 href={item.href}
-                className={`text-[16px] leading-6 ${
-                  item.active ? "text-[#FF9F0D] font-bold" : "text-white"
-                } font-inter hover:text-[#FF9F0D] transition-colors`}
+                className={`text-[16px] leading-6 ${item.active ? "text-[#FF9F0D] font-bold" : "text-white"} font-inter hover:text-[#FF9F0D] transition-colors`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
@@ -62,13 +54,13 @@ export default function Navbar() {
 
         {/* Icons */}
         <div className="hidden lg:flex items-center gap-4">
-          <Link href="/" className="text-white hover:text-[#FF9F0D] transition-colors">
+          <Link href="/" className="text-white hover:text-[#FF9F0D] ">
             <Image src="/search.png" alt="search" width={24} height={24} />
           </Link>
-          <Link href="/" className="text-white hover:text-[#FF9F0D] transition-colors">
+          <Link href="/" className="text-white hover:text-[#FF9F0D] ">
             <Image src="/user.png" alt="user" width={24} height={24} />
           </Link>
-          <Link href="/" className="text-white hover:text-[#FF9F0D] transition-colors">
+          <Link href="/" className="text-white hover:text-[#FF9F0D] ">
             <Image src="/tote.png" alt="cart" width={24} height={24} />
           </Link>
         </div>
